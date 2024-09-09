@@ -13,6 +13,10 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+app.get("/",(req,res)=>{
+    res.send("Test Route!");
+})
+
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 
