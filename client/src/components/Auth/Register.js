@@ -22,7 +22,7 @@ const Register = () => {
     return (
         <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-200 via-blue-300 to-blue-500">
             <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
-                <h2 className="text-3xl font-semibold text-blue-700 mb-6">Register</h2>
+                <h2 className="text-3xl font-bold text-blue-700 mb-4 text-center">Register</h2>
                 {error && <p className="text-red-500 text-center mb-4">{error}</p>}
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
