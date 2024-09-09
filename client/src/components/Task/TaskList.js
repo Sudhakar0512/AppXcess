@@ -11,7 +11,8 @@ const EditTaskForm = ({ task, onSave, onCancel }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.patch(`http://localhost:5000/api/tasks/${task._id}`, {
+            // const res = await axios.patch(`http://localhost:5000/api/tasks/${task._id}`, {
+            const res = await axios.patch(`https://app-x-cess.vercel.app/api/tasks/${task._id}`, {
                 title,
                 description,
                 priority,
@@ -91,7 +92,8 @@ const TaskList = () => {
 
     const fetchTasks = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/tasks', {
+            // const res = await axios.get('http://localhost:5000/api/tasks', {
+            const res = await axios.get('https://app-x-cess.vercel.app/api/tasks', {   
                 params: {
                     priority: priorityFilter,
                     dueDate: dueDateFilter,
@@ -110,7 +112,8 @@ const TaskList = () => {
 
     const handleComplete = async (taskId, completed) => {
         try {
-            const res = await axios.patch(`http://localhost:5000/api/tasks/complete/${taskId}`, {}, {
+            // const res = await axios.patch(`http://localhost:5000/api/tasks/complete/${taskId}`, {}, {
+            const res = await axios.patch(`https://app-x-cess.vercel.app/api/tasks/complete/${taskId}`, {}, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
 
@@ -126,7 +129,8 @@ const TaskList = () => {
 
     const handleDelete = async (taskId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/tasks/${taskId}`, {
+            // await axios.delete(`http://localhost:5000/api/tasks/${taskId}`, {
+            await axios.delete(`https://app-x-cess.vercel.app/api/tasks/${taskId}`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             setTasks(tasks.filter(task => task._id !== taskId));

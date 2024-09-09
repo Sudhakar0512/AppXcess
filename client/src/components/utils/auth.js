@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+// const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://app-x-cess.vercel.app/api';
 
 export const checkToken = () => {
     const token = localStorage.getItem('token');
